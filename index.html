@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hand cricket game</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="main-div">
+      <div id="label-div">
+        <h1>User</h1>
+        <h1>Computer</h1>
+      </div>
+      <center>
+        <h1 id="score-element">Score : <span id="score">0</span></h1>
+      </center>
+      <div id="image-div">
+        <img id="left-img" src="./images/batsman.png" />
+        <img id="right-img" src="./images/bowler.png" />
+      </div>
+      <div id="buttons-div">
+        <button id="b1" onclick="myFunction(1)">1</button>
+        <button id="b2" onclick="myFunction(2)">2</button>
+        <button id="b3" onclick="myFunction(3)">3</button>
+        <button id="b4" onclick="myFunction(4)">4</button>
+        <button id="b5" onclick="myFunction(5)">5</button>
+        <button id="b6" onclick="myFunction(6)">6</button>
+        <button id="desc" onclick="resetImages()">Reset</button>
+      </div>
+    </div>
+    <script>
+      var score = 0;
+      function myFunction(num) {
+        var leftImage = document.getElementById("left-img");
+        var rightImage = document.getElementById("right-img");
+        var scoreElement = document.getElementById("score");
+
+        let x = Math.floor(Math.random() * 6 + 1);
+        leftImage.src = `./images/${num}.png`;
+        rightImage.src = `./images/${x}.png`;
+
+        if (num === x) {
+          score = 0;
+          document.getElementById("score-element").innerHTML =
+            "You Lose, Try Again!";
+        } else {
+          score += num;
+          document.getElementById(
+            "score-element"
+          ).innerHTML = `Score : ${score}`;
+        }
+      }
+
+      function resetImages() {
+        score = 0;
+        var leftImage = document.getElementById("left-img");
+        var rightImage = document.getElementById("right-img");
+        document.getElementById("score-element").innerHTML = `Score : ${score}`;
+
+        leftImage.src = "./images/batsman.png";
+        rightImage.src = "./images/bowler.png";
+      }
+    </script>
+  </body>
+</html>

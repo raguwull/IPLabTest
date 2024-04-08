@@ -1,0 +1,41 @@
+body {
+  background-image: url("./images/Background-image.jpg");
+  background-size: contain;
+  height: 100%;
+}
+
+#label-div {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+
+#image-div {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+#image-div > img {
+  height: 30%;
+  width: 30%;
+}
+
+#buttons-div {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  padding: 20px;
+  background-color: red;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  border: none;
+  font-size: 20px;
+}
+
+span,
+h1 {
+  color: white;
+}
